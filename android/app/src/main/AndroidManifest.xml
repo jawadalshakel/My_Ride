@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
     <application
         android:label="my_ride"
         android:name="${applicationName}"
@@ -36,6 +37,6 @@
         
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyC0veARfXrDhY_kcaPEZMvdkZh1jfweNDs"/>
+            android:value="AIzaSyC0veARfXrDhY_kcaPEZMvdkZh1jfweNDs"/> 
     </application>
 </manifest>

@@ -30,10 +30,16 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  google_maps_flutter: ^2.2.0
-  geolocator: ^7.0.3
-  geocoding: ^2.0.0
-
+  google_maps_flutter: ^2.1.1
+  geolocator: ^8.0.5
+  geocoding: ^2.0.4
+  http:
+  uuid: ^3.0.5
+  firebase_core: ^2.22.0
+  cloud_firestore: ^4.13.2
+  firebase_database: ^10.3.5
+  google_maps_widget: ^1.0.5+1
+  google_maps_routes: ^1.1.2
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -65,6 +71,9 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
    - assets\images\logo.png
+   - assets\images\circle.png
+   - assets\images\circlee.png
+   - assets\images\circles.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
