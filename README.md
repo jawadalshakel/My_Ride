@@ -1,6 +1,6 @@
 # my_ride
 
-A new Flutter project.
+This project is still under development
 
 ## Getting Started
 
