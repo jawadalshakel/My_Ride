@@ -58,7 +58,7 @@ class _MyWidgetState extends State<mapRoute> {
 
   MapsRoutes route = MapsRoutes();
   DistanceCalculator distanceCalculator = DistanceCalculator();
-  String googleApiKey = 'AIzaSyC0veARfXrDhY_kcaPEZMvdkZh1jfweNDs';
+  String googleApiKey = '';
   String totalDistance = 'No route';
 
   @override
