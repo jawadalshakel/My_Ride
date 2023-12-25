@@ -92,7 +92,7 @@ class WaypointBubble extends StatelessWidget {
 
 class _MapScreenState extends State<HomeMap> {
   final LocationService _locationService = LocationService();
-  final String _apiKey = "AIzaSyC0veARfXrDhY_kcaPEZMvdkZh1jfweNDs";
+  final String _apiKey = "";
   late GoogleMapController mapController;
   late Position _currentPosition;
   late String _currentAddress = '';
@@ -399,7 +399,7 @@ class _MapScreenState extends State<HomeMap> {
 
   Future<List<LatLng>> _getDrivingRoute(Waypoint startWaypoint, Waypoint endWaypoint) async {
     // Make a Directions API request for driving mode
-    String apiKey = "AIzaSyC0veARfXrDhY_kcaPEZMvdkZh1jfweNDs"; // Replace with your actual API key
+    String apiKey = ""; // Replace with your actual API key
     String request = "https://maps.googleapis.com/maps/api/directions/json?origin=${startWaypoint.latitude},${startWaypoint.longitude}&destination=${endWaypoint.latitude},${endWaypoint.longitude}&mode=driving&key=$apiKey";
     var response = await http.get(Uri.parse(request));
     var data = jsonDecode(response.body);
