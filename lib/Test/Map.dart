@@ -32,7 +32,7 @@ class Waypoint {
 
 class _MapScreenState extends State<MapScreen> {
   final LocationService _locationService = LocationService();
-  final String _apiKey = "AIzaSyC0veARfXrDhY_kcaPEZMvdkZh1jfweNDs";
+  final String _apiKey = "";
   late GoogleMapController mapController;
   late Position _currentPosition;
   late String _currentAddress = '';
