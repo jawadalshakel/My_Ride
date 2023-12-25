@@ -1,10 +1,7 @@
-import 'dart:async';
+/* import 'dart:async';
 import 'dart:convert';
-import 'dart:math';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_maps_widget/google_maps_widget.dart';
 import 'package:my_ride/Test/bus_routes.dart';
 import 'package:uuid/uuid.dart';
@@ -289,17 +286,17 @@ class _MapScreenState extends State<MapScreen> {
                             onPressed: () {},
                           ),
                           border: InputBorder.none,
-                          contentPadding: EdgeInsets.all(8.0),
+                          contentPadding: const EdgeInsets.all(8.0),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(0.0),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.blue,
                             ),
                           ),
                         ),
                       ),
                       if (_placesList.isNotEmpty)
-                        Container(
+                        SizedBox(
                           height: 200,
                           child: ListView.builder(
                             itemCount: _placesList.length,
@@ -368,7 +365,7 @@ class _MapScreenState extends State<MapScreen> {
     markers.clear();
     markers.add(
       Marker(
-        markerId: MarkerId("selected-location"),
+        markerId: const MarkerId("selected-location"),
         position: LatLng(lat, lng),
         infoWindow: InfoWindow(
           title: "Selected Location",
@@ -384,3 +381,4 @@ class _MapScreenState extends State<MapScreen> {
     });
   }
 }
+ */

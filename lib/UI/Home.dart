@@ -1,67 +1,69 @@
 // ignore: file_names
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:my_ride/UI/HomeMap.dart';
+import 'package:my_ride/UI/Lines.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({Key? key, this.user}) : super(key: key);
+
+  final User? user;
 
   @override
-  State<HomeScreen> createState() => _SearchBarAppState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _SearchBarAppState extends State<HomeScreen> {
-  bool isDark = false;
+class _HomeScreenState extends State<HomeScreen> {
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+
+  static const List<Widget> _widgetOptions = <Widget>[
+    HomeMap(),
+    AllBusRoutesScreen(),
+    Text(
+      'Index 2: School',
+      style: optionStyle,
+    ),
+  ];
+
+  void _onItemTapped(int index) {
+    // Update the index and navigate to AllBusRoutesScreen when index is 1
+    if (index == 1) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => AllBusRoutesScreen()), // Remove const here
+      );
+    } else {
+      setState(() {
+        _selectedIndex = index;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    final ThemeData themeData = ThemeData(useMaterial3: true, brightness: isDark ? Brightness.dark : Brightness.light);
-
-    return MaterialApp(
-      theme: themeData,
-      home: Scaffold(
-        appBar: AppBar(title: const Text('Search Bar Sample')),
-        body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: SearchAnchor(builder: (BuildContext context, SearchController controller) {
-            return SearchBar(
-              controller: controller,
-              padding: const MaterialStatePropertyAll<EdgeInsets>(EdgeInsets.symmetric(horizontal: 16.0)),
-              onTap: () {
-                controller.openView();
-              },
-              onChanged: (_) {
-                controller.openView();
-              },
-              leading: const Icon(Icons.search),
-              trailing: <Widget>[
-                Tooltip(
-                  message: 'Change brightness mode',
-                  child: IconButton(
-                    isSelected: isDark,
-                    onPressed: () {
-                      setState(() {
-                        isDark = !isDark;
-                      });
-                    },
-                    icon: const Icon(Icons.wb_sunny_outlined),
-                    selectedIcon: const Icon(Icons.brightness_2_outlined),
-                  ),
-                )
-              ],
-            );
-          }, suggestionsBuilder: (BuildContext context, SearchController controller) {
-            return List<ListTile>.generate(5, (int index) {
-              final String item = 'item $index';
-              return ListTile(
-                title: Text(item),
-                onTap: () {
-                  setState(() {
-                    controller.closeView(item);
-                  });
-                },
-              );
-            });
-          }),
-        ),
+    return Scaffold(
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: 'Discover',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.business),
+            label: 'Business',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.school),
+            label: 'School',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: const Color.fromRGBO(0, 111, 190, 0.856),
+        onTap: _onItemTapped,
       ),
     );
   }

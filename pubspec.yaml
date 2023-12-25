@@ -35,11 +35,15 @@ dependencies:
   geocoding: ^2.0.4
   http:
   uuid: ^3.0.5
-  firebase_core: ^2.22.0
+  firebase_core: ^2.24.2
   cloud_firestore: ^4.13.2
   firebase_database: ^10.3.5
   google_maps_widget: ^1.0.5+1
   google_maps_routes: ^1.1.2
+  permission_handler: ^11.0.1
+  firebase_auth: ^4.15.2
+  shared_preferences: ^2.0.7
+  flutter_colorpicker: ^0.5.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -74,6 +78,7 @@ flutter:
    - assets\images\circle.png
    - assets\images\circlee.png
    - assets\images\circles.png
+   - assets\images\location.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

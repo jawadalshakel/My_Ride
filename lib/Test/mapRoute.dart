@@ -1,10 +1,10 @@
-import 'dart:async';
+/* import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_maps_routes/google_maps_routes.dart';
 
 class GoogleMapControllerExtension {
-  Set<Polyline> _polylines = {};
+  final Set<Polyline> _polylines = {};
 
   void clearPolylines() {
     _polylines.clear();
@@ -43,21 +43,21 @@ class mapRoute extends StatefulWidget {
 }
 
 class _MyWidgetState extends State<mapRoute> {
-  Completer<GoogleMapController> _controller = Completer();
-  GoogleMapControllerExtension _extendedController = GoogleMapControllerExtension();
+  final Completer<GoogleMapController> _controller = Completer();
+  final GoogleMapControllerExtension _extendedController = GoogleMapControllerExtension();
 
   List<LatLng> points = [
-    LatLng(21.481979, 39.181153),
-    LatLng(21.500737, 39.184508),
-    LatLng(21.521499, 39.181972),
-    LatLng(21.541393, 39.177118),
-    LatLng(21.560556, 39.172506),
-    LatLng(21.558749, 39.149869),
-    LatLng(21.551499, 39.134270),
+    const LatLng(21.481979, 39.181153),
+    const LatLng(21.500737, 39.184508),
+    const LatLng(21.521499, 39.181972),
+    const LatLng(21.541393, 39.177118),
+    const LatLng(21.560556, 39.172506),
+    const LatLng(21.558749, 39.149869),
+    const LatLng(21.551499, 39.134270),
   ];
 
-  MapsRoutes route = new MapsRoutes();
-  DistanceCalculator distanceCalculator = new DistanceCalculator();
+  MapsRoutes route = MapsRoutes();
+  DistanceCalculator distanceCalculator = DistanceCalculator();
   String googleApiKey = 'AIzaSyC0veARfXrDhY_kcaPEZMvdkZh1jfweNDs';
   String totalDistance = 'No route';
 
@@ -93,7 +93,7 @@ class _MyWidgetState extends State<mapRoute> {
                 ),
                 child: Align(
                   alignment: Alignment.center,
-                  child: Text(totalDistance, style: TextStyle(fontSize: 25.0)),
+                  child: Text(totalDistance, style: const TextStyle(fontSize: 25.0)),
                 ),
               ),
             ),
@@ -105,7 +105,7 @@ class _MyWidgetState extends State<mapRoute> {
           Set<Polyline> polylines = await route.drawRoute(
             points,
             'Test routes',
-            Color.fromRGBO(130, 78, 210, 1.0),
+            const Color.fromRGBO(130, 78, 210, 1.0),
             googleApiKey,
             travelMode: TravelModes.driving,
           );
@@ -121,3 +121,4 @@ class _MyWidgetState extends State<mapRoute> {
     );
   }
 }
+ */
